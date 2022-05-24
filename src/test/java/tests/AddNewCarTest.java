@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static tests.TestBase.app;
 
-public class AddNewCarTest {
+public class AddNewCarTest extends TestBase{
     @BeforeMethod
     public void precondition(){
 

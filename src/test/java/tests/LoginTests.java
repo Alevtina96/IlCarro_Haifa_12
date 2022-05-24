@@ -8,11 +8,12 @@ import org.testng.annotations.Test;
 
 import static tests.TestBase.app;
 
-public class LoginTests {
+public class LoginTests  extends TestBase{
     @Test
     public void loginSuccessAuth(){
         logger.info("Name of method is loginSuccessAuth");
         logger.info("Test start with data : \"noa@gmail.com\",\"Nnoa12345$\"");
+
         app.user().openLoginForm();
         //app.user().fillLoginForm("noa@gmail.com","Nnoa12345$");
         app.user().fillLoginForm(Auth.builder().email("noa@gmail.com").password("Nnoa12345$").build());

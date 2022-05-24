@@ -8,6 +8,7 @@ public class SearchTests extends TestBase{
 
     @Test
     public void searchTestsSimple(){
+        logger.info("Logger");
         //5/24/2022 - 5/25/2022
         app.search().fillSimpleDataCurrentMounth("Tel Aviv Israel" , "5/24/2022" , "5/25/2022");
         app.search().submit();
@@ -39,10 +40,10 @@ public class SearchTests extends TestBase{
     app.search().pause(7000);
     app.user().submit();
     }
-@Test
-public void searchPeriodAnyDataInFuture(){
-        app.search().fillSearchFormInFuture("Haifa", "07/30/2022", "04/22/2023");
-}
+//@Test
+//public void searchPeriodAnyDataInFuture(){
+//        app.search().fillSearchFormInFuture("Haifa", "07/30/2022", "04/22/2023");
+//}
     @AfterMethod
     public void postCondition(){
          app.search().returnToHome();

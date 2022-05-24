@@ -21,6 +21,8 @@ public class RegistrationTests extends TestBase {
         System.out.println(System.currentTimeMillis());
         System.out.println(System.currentTimeMillis()/1000);
 
+        logger.info("Logger");
+
         app.user().openRegistrationForm();
         app.user().fillRegistrationForm("Renata","Dow","renata"+i+"@mail.com","Rr12345$");
         //app.user().checkPolicy();
@@ -76,4 +78,4 @@ public class RegistrationTests extends TestBase {
 
 
 
-}
+

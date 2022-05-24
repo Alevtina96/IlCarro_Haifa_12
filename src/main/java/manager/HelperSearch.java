@@ -16,8 +16,8 @@ public class HelperSearch extends HelperBase{
 
     private void selectSimpleDateStringFormat(String dateFrom, String dateTo) {
         click(By.id("dates"));
-        String []dateF= dateFrom.split( "/");
-        String []dateT= dateTo.split( "/");
+        String [] splitFrom= dateFrom.split( "/");
+        String []splitTo= dateTo.split( "/");
 
         String locatorFrom =String.format("//div[text()=' %s ']",splitFrom[1]);
         String locatorTo =String.format("//div[text()=' %s ']",splitTo[1]);
