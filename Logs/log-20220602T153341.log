@@ -1,0 +1,35 @@
+15:33:51.250  INFO  manager.ApplicationManager - Test start in Chrome driver
+15:33:54.957  INFO  manager.ApplicationManager - The link of project -->https://ilcarro-1578153671498.web.app/search
+15:33:55.011  INFO  tests.TestBase - SL: Name of method ---> loginSuccessUser
+15:33:55.014  INFO  tests.TestBase - Name of method is loginSuccessUser
+15:33:55.015  INFO  tests.TestBase - Test start with data : "noa@gmail.com","Nnoa12345$"
+15:33:55.018  INFO  tests.TestBase - Test start with data :   User{name='null', lastName='null', email='noa@gmail.com', password='Nnoa12345$', phone='null'}
+15:33:55.019  INFO  manager.MyListener - Start find element by locator -->By.cssSelector: [href ^='/login']
+15:33:55.062  INFO  manager.MyListener - After find by --->By.cssSelector: [href ^='/login']
+15:33:55.288  INFO  manager.MyListener - Start find element by locator -->By.id: email
+15:33:55.330  INFO  manager.MyListener - After find by --->By.id: email
+15:33:56.084  INFO  manager.MyListener - Start find element by locator -->By.id: password
+15:33:56.108  INFO  manager.MyListener - After find by --->By.id: password
+15:33:56.368  INFO  manager.MyListener - Start find element by locator -->By.cssSelector: button[type='submit']
+15:33:56.407  INFO  manager.MyListener - After find by --->By.cssSelector: button[type='submit']
+15:33:56.601  INFO  manager.MyListener - Start find element by locator -->By.cssSelector: .dialog-container
+15:34:01.697  INFO  manager.MyListener - We have a problem -->https://ilcarro-1578153671498.web.app/login?url=%2Fsearch
+15:34:01.697  INFO  manager.MyListener - We have a problem -->no such element: Unable to locate element: {"method":"css selector","selector":".dialog-container"}
+  (Session info: chrome=100.0.4896.127)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-CVF714R', ip: '10.100.102.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_321'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\House\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61157}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0322eeae3aee4b98dde26f21b2932358
+*** Element info: {Using=css selector, value=.dialog-container}
+15:34:01.698  INFO  manager.MyListener - We have a problem -->[Ljava.lang.StackTraceElement;@33f4b105
+15:34:01.699  INFO  manager.MyListener - We have a problem -->org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".dialog-container"}
+  (Session info: chrome=100.0.4896.127)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-CVF714R', ip: '10.100.102.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_321'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\House\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61157}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0322eeae3aee4b98dde26f21b2932358
+*** Element info: {Using=css selector, value=.dialog-container}

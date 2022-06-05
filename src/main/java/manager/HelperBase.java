@@ -2,8 +2,10 @@ package manager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-    public class HelperBase {
+public class HelperBase {
 
         WebDriver wd;
 
@@ -27,8 +29,14 @@ import org.openqa.selenium.WebElement;
 
     }
         public void submit() {
+
             click(By.cssSelector("button[type='submit']"));
         }
+
+    public void submitCar() {
+        new WebDriverWait(wd,15).until(ExpectedConditions.elementToBeClickable(wd.findElement(By.xpath("//button[text()='Submit']"))));
+        click(By.xpath("//button[text()='Submit']"));
+    }
     public boolean isElementPresent(By locator) {
         return wd.findElements(locator).size() > 0;
     }

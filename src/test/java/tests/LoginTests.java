@@ -1,15 +1,27 @@
 package tests;
 
+import manager.MyDataProvider;
 import models.Auth;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.lang.reflect.Array;
+import java.util.Iterator;
+import java.util.List;
 
 import static tests.TestBase.app;
 
 public class LoginTests  extends TestBase{
-    @Test
+    @BeforeMethod
+    public void preCondition(){
+        if(app.user().isLogOutPresent()){
+            app.user().logout();
+        }
+    }
+    @Test(dataProvider = "loginValidData",dataProviderClass = MyDataProvider.class)
     public void loginSuccessAuth(){
         logger.info("Name of method is loginSuccessAuth");
         logger.info("Test start with data : \"noa@gmail.com\",\"Nnoa12345$\"");
@@ -41,4 +53,7 @@ public class LoginTests  extends TestBase{
         app.user().clickOkButton();
 
     }
-}
+
+
+    }
+

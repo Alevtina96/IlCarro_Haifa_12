@@ -67,6 +67,8 @@ public class HelperUser extends HelperBase{
         return wd.findElement(By.cssSelector(".dialog-container h2")).getText();
     }
 
+
+
     public void clickOkButton() {
         click(By.xpath("//button[text()='Ok']"));
     }
@@ -85,7 +87,7 @@ public class HelperUser extends HelperBase{
     }
 
     public void fillLoginForm(User user) {
-        type(By.id("email"),user.getEmail());
+        type(By.id("email"),user.getEmail()); //auth вместо user
         type(By.id("password"),user.getPassword());
     }
 

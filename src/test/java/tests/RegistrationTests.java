@@ -1,5 +1,6 @@
 package tests;
 
+import manager.MyDataProvider;
 import models.Auth;
 import models.User;
 import org.testng.Assert;
@@ -18,10 +19,13 @@ public class RegistrationTests extends TestBase {
     public void registrationSuccess(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
 
+        String name = "Zoa";
+        String lastname = "Dow" + i;
+
         System.out.println(System.currentTimeMillis());
         System.out.println(System.currentTimeMillis()/1000);
 
-        logger.info("Logger");
+
 
         app.user().openRegistrationForm();
         app.user().fillRegistrationForm("Renata","Dow","renata"+i+"@mail.com","Rr12345$");
@@ -53,15 +57,15 @@ public class RegistrationTests extends TestBase {
 
     }
 
-    @Test
-    public void registrationSuccessAuth(){
+    @Test(dataProvider = "regValidData", dataProviderClass = MyDataProvider.class)
+    public void registrationSuccessAuth(Auth auth){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
-        Auth auth = Auth.builder()
-                .name("Taya")
-                .lastName("Hatum")
-                .email("taya"+i+"@gmail.com")
-                .password("Ww12345$").build();
-
+//        Auth auth = Auth.builder()
+//                .name("Taya")
+//                .lastName("Hatum")
+//                .email("taya"+i+"@gmail.com")
+//                .password("Ww12345$").build();
+        auth.setEmail("wow" + i + "mail.com");
 
         app.user().openRegistrationForm();
         app.user().fillRegistrationForm(auth);
