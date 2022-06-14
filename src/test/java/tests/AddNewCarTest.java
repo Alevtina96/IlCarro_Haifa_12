@@ -1,4 +1,5 @@
 package tests;
+import manager.MyDataProvider;
 import models.Auth;
 import models.Car;
 import models.User;
@@ -18,13 +19,15 @@ public class AddNewCarTest extends TestBase{
 
     }
 
-    @Test (dataProvider = "carValidData",dataProviderClass = MyDataProvider.class)
+    @Test (dataProvider = "carValidDataCSV",dataProviderClass = MyDataProvider.class)
     public void addNewCarSuccess(Car car){
+        int i = (int) (System.currentTimeMillis() / 1000) % 3600;
+        car.setCarRegNumber("222-33-"+i);
 
         logger.info("Tests start with car ---> "+car.toString());
         app.car().openCarForm();
         app.car().fillCarForm(car);
-        app.car().attachPhoto("/Users/tayahatum/Qa12Haifa/IlCarro_Haifa_12/auto2.jpeg"); /// attach
+        //app.car().attachPhoto("/Users/tayahatum/Qa12Haifa/IlCarro_Haifa_12/auto2.jpeg"); /// attach
         app.car().submitCar();
         Assert.assertEquals(app.car().checkMessageAddCar(),"Car added");
 

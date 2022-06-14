@@ -22,7 +22,7 @@ public class LoginTests  extends TestBase{
         }
     }
     @Test(dataProvider = "loginValidData",dataProviderClass = MyDataProvider.class)
-    public void loginSuccessAuth(){
+    public void loginSuccessAuth(String email, String password){
         logger.info("Name of method is loginSuccessAuth");
         logger.info("Test start with data : \"noa@gmail.com\",\"Nnoa12345$\"");
 
@@ -53,7 +53,22 @@ public class LoginTests  extends TestBase{
         app.user().clickOkButton();
 
     }
+    @Test(dataProvider = "loginValidDataAuth",dataProviderClass = MyDataProvider.class)
+    public void loginSuccessAuth2(Auth auth){
 
+
+        logger.info("Name of method is loginSuccessAuth");
+        logger.info("Test start with data : ");
+
+        app.user().openLoginForm();
+        app.user().fillLoginForm(auth);
+        app.user().submit();
+
+        Assert.assertEquals(app.user().checkMessage(),"Logged in success");
+        logger.info("Assert check message  : \"Logged in success\"");
+        app.user().clickOkButton();
+
+    }
 
     }
 

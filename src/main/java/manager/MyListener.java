@@ -1,5 +1,6 @@
 package manager;
 
+import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.slf4j.Logger;
@@ -7,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
+
 
 public class MyListener extends AbstractWebDriverEventListener {
     Logger logger = LoggerFactory.getLogger(MyListener.class);

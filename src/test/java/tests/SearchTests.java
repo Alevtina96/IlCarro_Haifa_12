@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class SearchTests extends TestBase {
 
-    @Test
+    @Test(groups = {"one"})
     public void searchTestsSimple() {
         //logger.info("Logger");
         //5/24/2022 - 5/25/2022
@@ -14,16 +14,16 @@ public class SearchTests extends TestBase {
         app.search().submit();
 
     }
-}
 
-//    @Test
-//    public void searchTestsAnyData(){
-//        //LocalDate Java
-//        //5/24/2022 - 5/25/2022
-//        app.search().fillSearchFormAnyData("Tel Aviv Israel" , "5/24/2022" , "5/25/2022");
-//        app.search().submit();
-//
-//    }
+
+    @Test
+    public void searchTestsAnyData(){
+        //LocalDate Java
+        //5/24/2022 - 5/25/2022
+        app.search().fillSearchFormAnyData("Tel Aviv Israel" , "5/24/2022" , "5/25/2022");
+        app.search().submit();
+
+    }
 //
 //    @Test
 //    public void searchPeriodCurrentMonth(){
@@ -55,3 +55,8 @@ public class SearchTests extends TestBase {
 //    }
 //
 //}
+@AfterMethod
+public void postCondition(){
+    app.search().returnToMainPage();
+}
+}

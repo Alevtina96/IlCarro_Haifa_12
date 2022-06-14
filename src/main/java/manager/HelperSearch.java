@@ -7,6 +7,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class HelperSearch extends HelperBase {
+    public HelperSearch(WebDriver wd) {
+        super(wd);
+    }
 
 //8/27/2022, "10/30/2022
     public void fillSearchFormAnyData(String city,String from,String to){
@@ -55,9 +58,7 @@ selectPeriodAnyData(from,to);
     }
 
 
-    public HelperSearch(WebDriver wd) {
-        super(wd);
-    }
+
 
     public void fillSearchFormCurrentMonth(String city, String dateFrom, String dateTo) {
         fillInputCity(city);
@@ -188,5 +189,9 @@ selectPeriodAnyData(from,to);
             click(By.cssSelector("button[aria-label='Next month']"));
         }
 
+    }
+
+    public void returnToMainPage() {
+        click(By.cssSelector("div.header a"));
     }
 }
